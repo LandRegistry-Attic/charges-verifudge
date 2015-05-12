@@ -1,4 +1,3 @@
-
 #################################################################################################
 ### This script is used to run any acceptance tests in the repository. It saves time and      ###
 ### confusion of executing any setup before the tests are run by including it all in one      ###
