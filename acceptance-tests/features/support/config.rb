@@ -1,9 +1,9 @@
-#################################################################################################
-### This file contains details of any setup of libraries/gems and such that will be needed    ###
-### for creating and running the acceptance tests.                                            ###
-#################################################################################################
+################################################################################
+### This file contains details of any setup of libraries/gems and such that  ###
+### will be needed for creating and running the acceptance tests.            ###
+################################################################################
 
-### Configure Capybara and Poltergeist for running tests against web applications
+### Configure Capybara and Poltergeist for running tests against web apps
 require 'capybara/cucumber'
 require 'capybara/poltergeist'
 
@@ -16,9 +16,9 @@ Capybara.default_driver = :poltergeist
 Capybara.javascript_driver = :poltergeist
 
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, :inspector => true, :js_errors => true)
+  Capybara::Poltergeist::Driver.new(app, inspector: true, js_errors: true)
 end
 
-### Configure Assertions so we can add assertions like assert_match() in our acceptance tests
+### Configure Assertions so we can add assertions like assert_match() in tests
 require 'test/unit'
 include Test::Unit::Assertions

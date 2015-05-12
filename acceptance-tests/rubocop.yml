@@ -3,9 +3,6 @@ AllCops:
     - 'Gemfile'
     - 'Gemfile.lock'
 
-Metrics/LineLength:
-  Enabled: false
-
 Metrics/MethodLength:
   Enabled: false
 
