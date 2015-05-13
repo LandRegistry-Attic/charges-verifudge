@@ -13,7 +13,6 @@ end
 After do |scenario|
   ### If an acceptance test scenario has failed then take a screenshot to
   ### record where in the scenario it occured.
-  if scenario.failed?
-    save_screenshot("sshot-#{Time.new.to_i}.png", full: true)
-  end
+
+  save_screenshot("sshot-#{Time.new.to_i}.png", full: true) if scenario.failed?
 end
