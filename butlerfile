@@ -1,3 +1,5 @@
 test: python tests.py
 run: python run.py runserver
 install: pip install -r requirements.txt; pip install -r requirements_test.txt; git submodule update --init
+linting: ./run_linting.sh
+acceptance-test: ./run_tests.sh
