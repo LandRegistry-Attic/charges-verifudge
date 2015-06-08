@@ -4,7 +4,7 @@ from app import helloworld, static
 from govuk_template.flask import assets
 
 
-def create_app():
+def create_manager():
     app = Flask(__name__)
     app.config.from_pyfile('config.py')
 
@@ -15,4 +15,4 @@ def create_app():
     app.register_blueprint(helloworld.blueprint)
     app.register_blueprint(assets.govuk_template, url_prefix='/template')
 
-    return app, manager
+    return manager
