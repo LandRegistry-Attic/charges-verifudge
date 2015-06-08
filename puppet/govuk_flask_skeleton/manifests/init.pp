@@ -3,6 +3,8 @@ class govuk_flask_skeleton (
     $port = '9030',
     $host = '0.0.0.0',
     $branch_or_revision = 'master',
+    $source = 'git://github.com/LandRegistry/govuk-flask-skeleton',
+    $domain = 'govuk_flask_skeleton.*',
     $owner = 'vagrant',
     $group = 'vagrant'
 ) {
@@ -11,7 +13,7 @@ class govuk_flask_skeleton (
   vcsrepo { "/opt/${module_name}":
     ensure   => latest,
     provider => git,
-    source   => 'git://github.com/LandRegistry/govuk-flask-skeleton',
+    source   => $source,
     revision => $branch_or_revision,
     owner    => $owner,
     group    => $group,
