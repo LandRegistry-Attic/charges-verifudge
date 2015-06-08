@@ -1,0 +1,14 @@
+{
+  "name": "charges-borrower-frontend",
+  "version": "0.0.1",
+  "author": "Land Registry Charges team",
+  "summary": "Install the Borrower Frontend.",
+  "license": "MIT",
+  "source": "https://github.com/LandRegistry/charges-borrower-frontend",
+  "project_page": "https://github.com/LandRegistry/charges-borrower-frontend",
+  "issues_url": "https://github.com/LandRegistry/charges-borrower-frontend",
+  "dependencies": [
+    { "name": "puppetlabs/vcsrepo" },
+    { "name": "puppetlabs/git" }
+  ]
+}

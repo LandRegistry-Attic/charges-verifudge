@@ -1,0 +1,16 @@
+[Unit]
+Description=Control the <%=@module_name%>
+
+[Service]
+PIDFile=/var/run/<%=@module_name%>/<%=@module_name%>.pid
+WorkingDirectory=/opt/<%=@module_name%>
+Environment='B_GUNICORN_PORT=<%=@port%>' 'B_GUNICORN_HOST=<%=@host%>'
+Type=simple
+ExecStart=/bin/bash -c './bin/run.sh'
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+User=<%=@owner%>
+Group=<%=@group%>
+
+[Install]
+WantedBy=multi-user.target
