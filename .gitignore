@@ -7,3 +7,4 @@ __pycache__
 coverage.xml
 test-reports/
 /acceptance-tests/sshot*
+/acceptance-tests/Gemfile.lock

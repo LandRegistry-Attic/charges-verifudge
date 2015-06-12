@@ -3,6 +3,9 @@
 ### folder such as Rubocop.                                                                   ###
 #################################################################################################
 
+# Path for running tests in acceptance test jenkins job
+export PATH=$PATH:/usr/local/bin
+
 ### Retrieve the current location the script is running
 currentLocation="$(cd "$(dirname "$0")"; pwd)"
 
