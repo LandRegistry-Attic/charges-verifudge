@@ -23,7 +23,7 @@ coverage run --source=app tests.py --xml
 
 test_pass=$?
 
-../run_linting.sh
+./run_linting.sh
 
 python_linting =$?
 
