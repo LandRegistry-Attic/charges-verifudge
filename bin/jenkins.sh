@@ -25,9 +25,11 @@ test_pass=$?
 
 ./run_linting.sh
 
-python_linting =$?
+python_linting=$?
 
 coverage xml
 coverage -rm
 
-exit $(($test_pass + $rubocop + $python_linting))
+e_code=$((test_pass + rubocop + python_linting))
+echo $e_code
+exit $e_code
