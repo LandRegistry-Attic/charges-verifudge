@@ -23,7 +23,11 @@ coverage run --source=app tests.py --xml
 
 test_pass=$?
 
+../run_linting.sh
+
+python_linting =$?
+
 coverage xml
 coverage -rm
 
-exit $(($test_pass + $rubocop))
+exit $(($test_pass + $rubocop + $python_linting))
