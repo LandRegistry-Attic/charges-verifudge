@@ -4,7 +4,8 @@ class govuk_flask_skeleton (
     $host = '0.0.0.0',
     $branch_or_revision = 'master',
     $source = 'git://github.com/LandRegistry/govuk-flask-skeleton',
-    $domain = 'govuk_flask_skeleton.*',
+    $subdomain = 'govuk-flask-skeleton',
+    $domain = undef,
     $owner = 'vagrant',
     $group = 'vagrant'
 ) {
@@ -67,5 +68,9 @@ class govuk_flask_skeleton (
       File["/etc/systemd/system/${module_name}.service"],
       File["/var/run/${module_name}"],
     ],
+  }
+
+  if $environment == 'development' {
+    standard_env::dev_host { $subdomain: }
   }
 }
