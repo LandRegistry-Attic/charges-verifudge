@@ -1,0 +1,14 @@
+{
+  "name": "verifudge",
+  "version": "0.0.1",
+  "author": "Land Registry Charges team",
+  "summary": "Install the Charges Verifudge app.",
+  "license": "MIT",
+  "source": "https://github.com/LandRegistry/charges-verifudge",
+  "project_page": "https://github.com/LandRegistry/charges-verifudge",
+  "issues_url": "https://github.com/LandRegistry/charges-verifudge",
+  "dependencies": [
+    { "name": "puppetlabs/vcsrepo" },
+    { "name": "puppetlabs/git" }
+  ]
+}

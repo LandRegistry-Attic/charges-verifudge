@@ -1,10 +1,10 @@
-# Install and configure the Govuk Flask Skeleton
-class govuk_flask_skeleton (
-    $port = '9030',
+# Install and configure the Charges Verifudge
+class verifudge (
+    $port = '9080',
     $host = '0.0.0.0',
     $branch_or_revision = 'master',
-    $source = 'git://github.com/LandRegistry/govuk-flask-skeleton',
-    $subdomain = 'govuk-flask-skeleton',
+    $source = 'git://github.com/LandRegistry/charges-verifudge',
+    $subdomain = 'verifudge',
     $domain = undef,
     $owner = 'vagrant',
     $group = 'vagrant'
