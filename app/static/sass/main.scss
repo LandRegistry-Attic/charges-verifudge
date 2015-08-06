@@ -1,5 +1,10 @@
-@import '_grid_layout.scss';
+@import 'grid_layout.scss';
+@import 'design-patterns/buttons';
 
 main {
   @extend %site-width-container;
+}
+
+.button {
+  @include button;
 }
