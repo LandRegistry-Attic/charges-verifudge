@@ -5,3 +5,7 @@ libsass
 Flask-Assets
 govuk-template
 gunicorn
+Flask-SQLAlchemy
+Flask-Migrate
+psycopg2
+alembic
