@@ -22,3 +22,17 @@ class TestModel(TestCase):
 
         saved = Identity.get(joe.id)
         self.assertEqual(joe, saved)
+
+    @with_context
+    def test_get_all(self):
+        self.assertEqual([], Identity.all())
+
+        joe = Identity()
+        joe.save()
+
+        self.assertEqual([joe], Identity.all())
+
+        jane = Identity()
+        jane.save()
+
+        self.assertListEqual([joe, jane], Identity.all())

@@ -15,3 +15,6 @@ class Identity(db.Model):
 
     def get(_id):
         return Identity.query.filter_by(id=_id).first()
+
+    def all():
+        return Identity.query.all()
