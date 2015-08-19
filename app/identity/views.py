@@ -6,3 +6,7 @@ class ListIdentities(Template):
 
     def __init__(self, identities=[]):
         self.identities = identities
+
+
+class CreateIdentity(Template):
+    pageTitle = 'Create new Identity'
