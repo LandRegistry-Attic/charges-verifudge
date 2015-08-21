@@ -3,10 +3,27 @@
 <table>
   <tr>
     <th>ID</th>
+    <th>Name</th>
+    <th>DOB</th>
+    <th>Address</th>
+    <th>Gender</th>
   </tr>
   {{#identities}}
   <tr>
     <td>{{id}}</td>
+    <td>{{first_name}} {{middle_names}} {{last_name}}</td>
+    <td>{{dob}}</td>
+    <td>
+      <ul>
+        <li>{{address_line1}}</li>
+        <li>{{address_line2}}</li>
+        <li>{{address_line3}}</li>
+        <li>{{address_line4}}</li>
+        <li>{{address_line5}}</li>
+        <li>{{postcode}}</li>
+      </ul>
+    </td>
+    <td>{{gender}}</td>
   </tr>
   {{/identities}}
 </table>
