@@ -48,3 +48,12 @@ class TestModel(TestCase):
         jane.save()
 
         self.assertListEqual([joe, jane], Identity.all())
+
+    @with_context
+    def test_tokens_are_generated(self):
+        joe = Identity()
+        jane = Identity()
+
+        self.assertRegexpMatches(joe.token, '[A-Fa-f0-9]{7}')
+        self.assertRegexpMatches(jane.token, '[A-Fa-f0-9]{7}')
+        self.assertNotEquals(joe.token, jane.token)

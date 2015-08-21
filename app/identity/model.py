@@ -1,4 +1,5 @@
 from app.db import db
+import uuid
 
 
 class Identity(db.Model):
@@ -16,6 +17,7 @@ class Identity(db.Model):
     address_line5 = db.Column(db.String())
     postcode = db.Column(db.String())
     gender = db.Column(db.String())
+    token = db.Column(db.String())
 
     def __init__(
         self, first_name=None, middle_names=None, last_name=None,
@@ -23,6 +25,9 @@ class Identity(db.Model):
         address_line3=None, address_line4=None, address_line5=None,
         postcode=None, gender=None
     ):
+        def __new_uuid():
+            return str(uuid.uuid4().hex[:7]).lower()
+
         self.first_name = first_name
         self.middle_names = middle_names
         self.last_name = last_name
@@ -34,6 +39,7 @@ class Identity(db.Model):
         self.address_line5 = address_line5
         self.postcode = postcode
         self.gender = gender
+        self.token = __new_uuid()
 
     def save(self):
         db.session.add(self)
