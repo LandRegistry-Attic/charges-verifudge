@@ -32,6 +32,18 @@ class TestModel(TestCase):
         joe.save()
         self.assertNotEqual(joe.id, None)
 
+        self.assertEquals(joe.first_name, 'Jane')
+        self.assertEquals(joe.middle_names, 'Jenny')
+        self.assertEquals(joe.last_name, 'Jones')
+        self.assertEquals(joe.dob, '1-12-1988')
+        self.assertEquals(joe.address_line1, '123 Fake Street')
+        self.assertEquals(joe.address_line2, 'Fakerton')
+        self.assertEquals(joe.address_line3, 'Fakesbury')
+        self.assertEquals(joe.address_line4, 'South Fakeshire')
+        self.assertEquals(joe.address_line5, 'Fakeland')
+        self.assertEquals(joe.postcode, 'AB12 3CD')
+        self.assertEquals(joe.gender, 'MALE')
+
         saved = Identity.get(joe.id)
         self.assertEqual(joe, saved)
 
@@ -57,3 +69,23 @@ class TestModel(TestCase):
         self.assertRegexpMatches(joe.token, '[A-Fa-f0-9]{7}')
         self.assertRegexpMatches(jane.token, '[A-Fa-f0-9]{7}')
         self.assertNotEquals(joe.token, jane.token)
+
+    @with_context
+    def test_empty_options(self):
+        joe = Identity()
+        joe.save()
+        recovered = Identity.get(joe.id)
+
+        self.assertEquals(recovered.first_name, None)
+        self.assertEquals(recovered.middle_names, None)
+        self.assertEquals(recovered.last_name, None)
+        self.assertEquals(recovered.dob, None)
+        self.assertEquals(recovered.address_line1, None)
+        self.assertEquals(recovered.address_line2, None)
+        self.assertEquals(recovered.address_line3, None)
+        self.assertEquals(recovered.address_line4, None)
+        self.assertEquals(recovered.address_line5, None)
+        self.assertEquals(recovered.postcode, None)
+        self.assertEquals(recovered.gender, None)
+
+        self.assertNotEquals(recovered.token, None)
