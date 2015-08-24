@@ -1,0 +1,38 @@
+<a href='/identity/new' class='button'>Create new Identity</a>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>DOB</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <th>Token</th>
+  </tr>
+  {{#identities}}
+  <tr id="identity-{{id}}">
+    <td>{{id}}</td>
+    <td>{{first_name}} {{middle_names}} {{last_name}}</td>
+    <td>{{dob}}</td>
+    <td>
+      <ul>
+        <li>{{address_line1}}</li>
+        <li>{{address_line2}}</li>
+        <li>{{address_line3}}</li>
+        <li>{{address_line4}}</li>
+        <li>{{address_line5}}</li>
+        <li>{{postcode}}</li>
+      </ul>
+    </td>
+    <td>{{gender}}</td>
+    <td>{{token}}</td>
+    <td>
+      <form
+        method="post"
+        action="/identity/{{id}}/delete">
+        <input type="submit" value="Delete">
+      </form>
+    </td>
+  </tr>
+  {{/identities}}
+</table>

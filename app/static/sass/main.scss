@@ -1,5 +1,24 @@
 @import '_grid_layout.scss';
+@import 'design-patterns/buttons';
 
 main {
   @extend %site-width-container;
+}
+
+button, a.button, input[type=submit] {
+  @include button;
+  margin: 1em 0;
+}
+
+label, input, select {
+  display: block;
+}
+
+input.dob-small-input {
+  display: inline;
+  width: 5em;
+}
+
+fieldset {
+  display: block;
 }

@@ -1,5 +1,5 @@
 Given(/^I visit the Hello World page$/) do
-  visit("#{$HELLOWORLD_DOMAIN}/helloworld")
+  visit("#{Urls.verifudge}/helloworld")
 end
 
 Then(/^the page contains Hello World! \(assert_selector\)$/) do

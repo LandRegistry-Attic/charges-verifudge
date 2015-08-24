@@ -67,7 +67,13 @@ class verifudge (
       File["/etc/init.d/${module_name}"],
       File["/etc/systemd/system/${module_name}.service"],
       File["/var/run/${module_name}"],
+      Standard_env::Db::Postgres[$module_name],
     ],
+  }
+
+  standard_env::db::postgres { $module_name:
+    user     => $owner,
+    password => $owner,
   }
 
   if $environment == 'development' {

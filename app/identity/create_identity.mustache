@@ -1,0 +1,39 @@
+<form method='post'>
+
+  <label for="first_name">First Name</label>
+  <input type="text" name="first_name" id="first_name" value="" />
+
+  <label for="middle_names">Middle Name(s)</label>
+  <input type="text" name="middle_names" id="middle_names" value="" />
+
+  <label for="last_name">Last Name</label>
+  <input type="text" name="last_name" id="last_name" value="" />
+
+  <label for="dob">Date of Birth</label>
+  <fieldset id="dob" class="">
+    <input type="text" name="dob_day" value="" class="dob-small-input" />
+    <input type="text" name="dob_month" value="" class="dob-small-input" />
+    <input type="text" name="dob_year" value="" class="dob-small-input" />
+  </fieldset>
+
+  <label for="address">Address</label>
+  <fieldset id="address">
+    <input type="text" name="address_line1" value="" />
+    <input type="text" name="address_line2" value="" />
+    <input type="text" name="address_line3" value="" />
+    <input type="text" name="address_line4" value="" />
+    <input type="text" name="address_line5" value="" />
+  </fieldset>
+
+  <label for="postcode">Postcode</label>
+  <input type="text" name="postcode" id="postcode" value="" />
+
+  <label for="gender">Gender</label>
+  <select name="gender" id="gender">
+    <option value="FEMALE">female</option>
+    <option value="MALE">male</option>
+    <option value="OTHER">other</option>
+  </select>
+
+  <input type="submit" value="Create new Identity" />
+</form>

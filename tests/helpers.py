@@ -1,5 +1,6 @@
 from functools import wraps
 from app import create_manager
+from app.db import db
 
 
 def with_context(test):
@@ -24,3 +25,14 @@ def setUpApp(self):
     self.app = manager.app
     self.manager = manager
     self.app.config['TESTING'] = True
+
+
+def setUpDB(self):
+    with self.app.app_context():
+        db.create_all()
+
+
+def tearDownDB(self):
+    with self.app.app_context():
+        db.session.remove()
+        db.drop_all()

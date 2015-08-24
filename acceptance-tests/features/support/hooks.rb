@@ -12,3 +12,10 @@ end
 ### Code that should be executed once all of the acceptance tests have run.
 After do
 end
+
+After('@delete_identity_afterwards') do
+  visit "#{Urls.verifudge}/identity"
+  row = page.first("//table//tr[@id='identity-#{@identity_id}']")
+  delete_button = row.first("//input[@value='Delete']")
+  delete_button.click
+end

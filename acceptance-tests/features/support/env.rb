@@ -4,4 +4,9 @@
 ### need to change every test when switching environments for example.       ###
 ################################################################################
 
-$HELLOWORLD_DOMAIN = (ENV['HELLOWORLD_DOMAIN'] || 'http://localhost:5000')
+# Provides access to URLs to tests
+class Urls
+  def self.verifudge
+    (ENV['DOMAIN'] || 'http://verifudge.dev.service.gov.uk')
+  end
+end
