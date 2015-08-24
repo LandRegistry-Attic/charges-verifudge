@@ -10,7 +10,7 @@
     <th>Token</th>
   </tr>
   {{#identities}}
-  <tr>
+  <tr id="identity-{{id}}">
     <td>{{id}}</td>
     <td>{{first_name}} {{middle_names}} {{last_name}}</td>
     <td>{{dob}}</td>
@@ -26,6 +26,13 @@
     </td>
     <td>{{gender}}</td>
     <td>{{token}}</td>
+    <td>
+      <form
+        method="post"
+        action="/identity/{{id}}/delete">
+        <input type="submit" value="Delete">
+      </form>
+    </td>
   </tr>
   {{/identities}}
 </table>

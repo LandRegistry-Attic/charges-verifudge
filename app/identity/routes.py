@@ -10,6 +10,11 @@ def register_routes(blueprint):
         all_identities = Identity.all()
         return ListIdentities(all_identities).render()
 
+    @blueprint.route('/identity/<_id>/delete', methods=['POST'])
+    def delete_identity(_id):
+        Identity.delete(_id)
+        return redirect(url_for('identity.list_identities'))
+
     @blueprint.route('/identity/new', methods=['POST', 'GET'])
     def create_identity():
         if request.method == 'GET':

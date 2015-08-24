@@ -45,6 +45,12 @@ class Identity(db.Model):
         db.session.add(self)
         db.session.commit()
 
+    @staticmethod
+    def delete(id_):
+        identity = Identity.query.filter_by(id=id_).first()
+        db.session.delete(identity)
+        db.session.commit()
+
     def get(_id):
         return Identity.query.filter_by(id=_id).first()
 
