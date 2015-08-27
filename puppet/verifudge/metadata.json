@@ -8,7 +8,6 @@
   "project_page": "https://github.com/LandRegistry/charges-verifudge",
   "issues_url": "https://github.com/LandRegistry/charges-verifudge",
   "dependencies": [
-    { "name": "puppetlabs/vcsrepo" },
-    { "name": "puppetlabs/git" }
+    { "name": "puppetlabs/vcsrepo" }
   ]
 }
