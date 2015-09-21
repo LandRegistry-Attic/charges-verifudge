@@ -3,7 +3,7 @@
 ## Contents
 
 - [Usage](#usage)
-- [Getting Started](#Getting started)
+- [Getting Started](#Getting Started)
 - [Testing](#Testing)
 
 The API Skeleton provides a skeleton API for use with flask API projects.
