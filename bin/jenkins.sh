@@ -2,7 +2,7 @@
 
 env_dir="$JENKINS_HOME/virtualenv/${JOB_NAME// /_}"
 
-#create and activate a virtualenv
+#create and activate a virtualenv to use
 virtualenv $env_dir
 . $env_dir/bin/activate
 
